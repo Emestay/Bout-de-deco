@@ -54,28 +54,24 @@ console.log(numDeBombe(797, 114))
 
 // Exo 4 de pydefi
 
-let blanc;
-let roux;
-let noir;
 
 
-function testBoeuf(blanc , roux, noir){
-    for (blanc  ; blanc < 1000 ; blanc++){
-        for (roux  ; roux < 1000 ; roux++){
-            for (noir  ; noir < 1000 ; noir++){
-                if ((blanc * roux  * noir) === ((blanc + roux + noir)*777)){
-                    return (blanc + roux + noir);
+
+function testBoeuf( ){
+    for (let blanc = 0  ; blanc < 1000 ; blanc++){
+        for (let roux = blanc + 1  ; roux < 1000 ; roux++){
+            for (let noir = roux + 1  ; noir < blanc*2 ; noir++){
+                if ((blanc * roux  * noir) === ((blanc + roux + noir)*777 ) && blanc+roux+noir < 1000 ){
+                    console.log([blanc , roux , noir]);
                 }
+            }
         }
-
     }
-}console.log()
 }
 
 
 
 
-console.log(testBoeuf(21, 74, 95))
 
 // Exo 5 de pydefi
 
