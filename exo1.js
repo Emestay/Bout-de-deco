@@ -120,10 +120,25 @@ console.log(calculerNombPierres(tableauExo));
 
 //exo 6 Lion
 
-let dieux = ["ARTEMIS ASCLEPIOS ATHENA ATLAS CHARON CHIRON CRONOS DEMETER EOS ERIS EROS GAIA HADES HECATE HEPHAISTOS HERA HERMES HESTIA HYGIE LETO MAIA METIS MNEMOSYNE NYX OCEANOS OURANOS PAN PERSEPHONE POSEIDON RHADAMANTHE SELENE THEMIS THETIS TRITON ZEUS"];
+let dieuxYouss = ['ARTEMIS','ASCLEPIOS','ATHENA','ATLAS','CHARON','CHIRON','CRONOS','DEMETER','EOS','ERIS','EROS','GAIA','HADES','HECATE','HEPHAISTOS','HERA','HERMES','HESTIA','HYGIE','LETO','MAIA','METIS','MNEMOSYNE','NYX','OCEANOS','OURANOS','PAN','PERSEPHONE','POSEIDON','RHADAMANTHE', 'SELENE','THEMIS','THETIS','TRITON','ZEUS'];
 
-let dieuxYouss = ['ARTEMIS','ASCLEPIOS','ATHENA','ATLAS','CHARON','CHIRON','CRONOS','DEMETER','EOS','ERISEROS','GAIA','HADES','HECATE','HEPHAISTOS','HERA','HERMES','HESTIA','HYGIE','LETO','MAIA','METIS','MNEMOSYNE','NYX','OCEANOS','OURANOS','PAN','PERSEPHONE','POSEIDON','RHADAMANTHESELENE','THEMIS','THETIS','TRITON','ZEUS'];
+// let dico = {'A': 1, 'B': 2 };
 
+console.log(dieuxYouss);
+function comparaison(word1, word2){
+    return conversionMot(word1) - conversionMot(word2);
+    
+}
 
+function conversionMot(word){
+    let somme = 0;
+    for (let i = 0 ; i < word.length ; i++){
+       somme = (word.charCodeAt(i)- 64) + somme;
+    }
+    return somme;
+}
+console.log(dieuxYouss.sort(comparaison));
+// console.log(conversionMot('AABAAAAA'));
+// console.log('R'.charCodeAt(0) - 64);
 
 
