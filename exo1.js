@@ -63,11 +63,13 @@ function testBoeuf(blanc , roux, noir){
     for (blanc  ; blanc < 1000 ; blanc++){
         for (roux  ; roux < 1000 ; roux++){
             for (noir  ; noir < 1000 ; noir++){
-                return (blanc * roux  * noir) === ((blanc + roux + noir)*777);
+                if ((blanc * roux  * noir) === ((blanc + roux + noir)*777)){
+                    return (blanc + roux + noir);
+                }
         }
 
     }
-}
+}console.log()
 }
 
 
