@@ -148,26 +148,49 @@ function minuscule(truc) {
     return truc.toLowerCase();
   }
 
-  const parchemin = "MzZfiIFmMpPizwWZkbByYKfFjJkKusSbBUplLqisSlLdDIQPnrRnuUuUsgkKfFdDGSxhHmMmMXgGjaAJpzZpeEPPnNpncmMinNIwpPWfFcCCNPnqQxXNeqQhHraefFEdkKDpmMPARaqQqQikjJKmMoOIrRpPoOnNmyYMfFxXkoOsSKzZwefFEWvVyYyYjJpPEviIzeExXZxgGwWjkKJXmMxXVvVkqQoOagxXGeEAoOpPtTntTNnNKjtTxXwWgGJunjJdDoONUspPSutTtgGTUhHqlLrRQmuUjJnwfFWNxXpzZPyYlLzZMoOnweEfFWkwpPjJWnNxXKyYjJyYfFuUicbBCcCpuUoOPoeEoOsgwWsaAsSSjJGkKeEnNSpPvVsmyYMoOsSSOxXdyqQzZmMmMYnNDd";
-  
-  let parchemin2 = [minuscule(parchemin)]
-  function tradWitcher(papierDeGeralt){
-    let message = '';
+let parchemin = 'yYyYjJpPEviIzeExXZxgGwWjkKJXmMxXVvVkqQoOagxXGeEAoOpPtTntTNnNKjtTxXwWgGJunjJdDoONUspPSutTtgGTUhHqlLrRQmuUjJnwfFWNxXpzZPyYlLzZMoOnweEfFWkwpPjJWnNxXKyYjJyYfFuUicbBCcCpuUoOPoeEoOsgwWsaAsSSjJGkKeEnNSpPvVsmyYMoOsSSOxXdyqQzZmMmMYnNDd';
+//   console.log(minuscule(parchemin));
+//   const parchemin2 = 'mzzfiifmmppizwwzkbbyykffjjkkussbbupllqissllddiqpnrrnuuuusgkkffddgsxhhmmmmxggjaajpzzpeeppnnpncmminniwppwffcccnpnqqxxneqqhhraeffedkkdpmmparaqqqqikjjkmmooirrppoonnmyymffxxkoosskzzweffewvvyyyyjjppeviizeexxzxggwwjkkjxmmxxvvvkqqooagxxgeeaooppttnttnnnkjttxxwwggjunjjddoonusppsutttggtuhhqllrrqmuujjnwffwnxxpzzpyyllzzmoonweeffwkwppjjwnnxxkyyjjyyffuuicbbcccpuuoopoeeoosgwwsaasssjjgkkeennsppvvsmyymoosssoxxdyqqzzmmmmynndd';
+
+function estMinuscule(mot){
+    return minuscule(mot) === mot;
+}
+
+function tradWitcher(papierDeGeralt){
+    let message ="";
     let i = 0;
-    while (i < papierDeGeralt.length){
-        
-        if(papierDeGeralt[i] === papierDeGeralt[i+1]){
-        i += 2;
+    while (i < papierDeGeralt.length-1){
+        let minuscule1 = estMinuscule(papierDeGeralt[i]);
+        let majuscule2 = !estMinuscule(papierDeGeralt[i+1])
+        if(minuscule1 && majuscule2 && papierDeGeralt[i] === minuscule(papierDeGeralt[i+1])){
+            i += 2;
         
         }
         else{
-        i++;
-        message += papierDeGeralt[i];
+            message += papierDeGeralt[i];
+            i++;
+        
         
         }
         
     }
+    if( i == papierDeGeralt.length -1 ){
+        message += papierDeGeralt[i];
+    }
+
     return message;
-  }
+
+}
   
-  console.log(tradWitcher(minuscule(parchemin2)));
+let parchemin2 = tradWitcher(parchemin);
+
+while ( parchemin !== parchemin2 ){
+    parchemin = parchemin2;
+    parchemin2 = tradWitcher(parchemin);
+}
+console.log(tradWitcher(parchemin));
+console.log(tradWitcher('GwboOBynaABlnNecCigGdd'));
+console.log(tradWitcher('MzZfiIFmMpPizwWZkbByYKfFjJkKusSbBUplLqisSlLdDIQPnrRnuUuUsgkKfFdDGSxhHmMmMXgGjaAJpzZpeEPPnNpncmMinNIwpPWfFcCCNPnqQxXNeqQhHraefFEdkKDpmMPARaqQqQikjJKmMoOIrRpPoOnNmyYMfFxXkoOsSKzZwefFEWvV yYyYjJpPEviIzeExXZxgGwWjkKJXmMxXVvVkqQoOagxXGeEAoOpPtTntTNnNKjtTxXwWgGJunjJdDoONUspPSutTtgGTUhHqlLrRQmuUjJnwfFWNxXpzZPyYlLzZMoOnweEfFWkwpPjJWnNxXKyYjJyYfFuUicbBCcCpuUoOPoeEoOsgwWsaAsSSjJGkKeEnNSpPvVsmyYMoOsSSOxXdyqQzZmMmMYnNDd'));
+
+
+
