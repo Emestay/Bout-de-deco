@@ -142,3 +142,32 @@ console.log(dieuxYouss.sort(comparaison));
 // console.log('R'.charCodeAt(0) - 64);
 
 
+// Exo niveau 2 MESSAGE DU WITCHER
+
+function minuscule(truc) {
+    return truc.toLowerCase();
+  }
+
+  const parchemin = "MzZfiIFmMpPizwWZkbByYKfFjJkKusSbBUplLqisSlLdDIQPnrRnuUuUsgkKfFdDGSxhHmMmMXgGjaAJpzZpeEPPnNpncmMinNIwpPWfFcCCNPnqQxXNeqQhHraefFEdkKDpmMPARaqQqQikjJKmMoOIrRpPoOnNmyYMfFxXkoOsSKzZwefFEWvVyYyYjJpPEviIzeExXZxgGwWjkKJXmMxXVvVkqQoOagxXGeEAoOpPtTntTNnNKjtTxXwWgGJunjJdDoONUspPSutTtgGTUhHqlLrRQmuUjJnwfFWNxXpzZPyYlLzZMoOnweEfFWkwpPjJWnNxXKyYjJyYfFuUicbBCcCpuUoOPoeEoOsgwWsaAsSSjJGkKeEnNSpPvVsmyYMoOsSSOxXdyqQzZmMmMYnNDd";
+  
+  let parchemin2 = [minuscule(parchemin)]
+  function tradWitcher(papierDeGeralt){
+    let message = '';
+    let i = 0;
+    while (i < papierDeGeralt.length){
+        
+        if(papierDeGeralt[i] === papierDeGeralt[i+1]){
+        i += 2;
+        
+        }
+        else{
+        i++;
+        message += papierDeGeralt[i];
+        
+        }
+        
+    }
+    return message;
+  }
+  
+  console.log(tradWitcher(minuscule(parchemin2)));
