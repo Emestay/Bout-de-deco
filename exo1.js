@@ -247,12 +247,6 @@ console.log(message);
 console.log(deuxParDeux);
 let messageTrad = '';
 
-// deuxParDeux.forEach(e => {
-//     messageTrad += codeKonami[deux];
-// });
-// console.log(messageTrad);
-
-
 for (let deux of deuxParDeux) {
   messageTrad += codeKonami[deux];
 }
@@ -261,6 +255,6 @@ console.log(messageTrad)
 
 //Exo pydefi SW VII : Détection des stormtroopers compatissants
 
-
-
-
+let numero = i;
+// dans une boucle qui demarre a 1503 a 2187 ?
+// if (numero[1]) === numero[2] && numero[3] === numero[4]){}
