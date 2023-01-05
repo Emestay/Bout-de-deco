@@ -258,3 +258,35 @@ console.log(messageTrad)
 // let numero = i;
 // dans une boucle qui demarre a 1503 a 2187 ?
 // if (numero[1]) === numero[2] && numero[3] === numero[4]){}
+
+
+//Les bonbons surprises
+//Non... pas encore crotte de nez...
+
+
+// les pref d'hermion : Aubergine, Épinards, Glace et Herbe
+// if (bonbons[i] === 'Aubergine' || bonbons[i] === 'Epinards' || bonbons[i] === 'Glace' || bonbons[i] === 'Herbe') 
+
+let compteurBonbon = 0;
+
+bonbons =['Aubergine', 'Bouillabaisse', 'Epinards', 'Chaussettes', 'Glace', 'Foie', 'MorveDeTroll', 'OeufPourri', 'Herbe', 'Poubelle', 'Saucisse', 'Vomi'];
+
+
+// while(bonbonsMelangee === true){
+
+//     compteurBonbon++;
+// }
+
+
+function mixBonbon(bonbonTest) {
+    for (let i = 0; i < bonbonTest.length; i += 5) {
+      let bonbonTemporaire = bonbonTest[i];
+      bonbonTest[i] = bonbonTest[i - 1];
+      bonbonTest[i - 1] = bonbonTemporaire;
+    }
+    return bonbonTest;
+  }
+
+console.log(mixBonbon(bonbons));
+
+// if (bonbons[i] === 'Aubergine' || bonbons[i] === 'Epinards' || bonbons[i] === 'Glace' || bonbons[i] === 'Herbe') 
