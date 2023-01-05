@@ -290,3 +290,5 @@ function mixBonbon(bonbonTest) {
 console.log(mixBonbon(bonbons));
 
 // if (bonbons[i] === 'Aubergine' || bonbons[i] === 'Epinards' || bonbons[i] === 'Glace' || bonbons[i] === 'Herbe') 
+
+
